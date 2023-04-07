@@ -3,6 +3,7 @@ import { motion as m } from "framer-motion";
 const Home = ({ name, number, setLogin }) => {
   const logout = () => {
     localStorage.clear();
+    console.log(window.otpless);
     setLogin(false);
   };
   return (
