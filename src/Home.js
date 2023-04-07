@@ -1,6 +1,10 @@
 import React from "react";
 import { motion as m } from "framer-motion";
-const Home = ({ name, number }) => {
+const Home = ({ name, number, setLogin }) => {
+  const logout = () => {
+    localStorage.clear();
+    setLogin(false);
+  };
   return (
     <m.div
       initial={{ opacity: 0 }}
@@ -21,6 +25,13 @@ const Home = ({ name, number }) => {
         <div className="creds">
           <h2>Hello {name}</h2>
           <h4>Logged In From number {number}</h4>
+          <button
+            onClick={logout}
+            className="button"
+            style={{ verticalAlign: "middle" }}
+          >
+            <span>Logout </span>
+          </button>
         </div>
       </div>
     </m.div>

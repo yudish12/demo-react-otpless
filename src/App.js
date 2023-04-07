@@ -3,7 +3,7 @@ import Home from "./Home";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   useEffect(() => {
@@ -33,7 +33,11 @@ function App() {
             alt="sddz"
           />
         </div>
-        {!login ? <Login /> : <Home name={name} number={number} />}
+        {!login ? (
+          <Login />
+        ) : (
+          <Home setLogin={setLogin} name={name} number={number} />
+        )}
       </div>
       {/* <Home />; */}
     </AnimatePresence>
