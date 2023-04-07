@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 function App() {
   const [login, setLogin] = useState(false);
-
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
   useEffect(() => {
     // Define the 'otpless' function
     window.otpless = (otplessUser) => {
       // Retrieve the user's details after successful login
       const waName = otplessUser.waName;
       const waNumber = otplessUser.waNumber;
+      setName(waName);
+      setNumber(waNumber);
       setLogin(true);
       // Handle the signup/signin process
       // ...
@@ -30,7 +33,7 @@ function App() {
             alt="sddz"
           />
         </div>
-        {!login ? <Login /> : <Home />}
+        {!login ? <Login /> : <Home name number />}
       </div>
       {/* <Home />; */}
     </AnimatePresence>

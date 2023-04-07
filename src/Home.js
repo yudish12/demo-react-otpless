@@ -19,8 +19,8 @@ const Home = ({ name, number }) => {
           alt="sddz"
         />
         <div className="creds">
-          <h2>HELLO YUDISH</h2>
-          <h4>Logged In From number 9810187232</h4>
+          <h2>Hello {name}</h2>
+          <h4>Logged In From number {number}</h4>
         </div>
       </div>
     </m.div>
