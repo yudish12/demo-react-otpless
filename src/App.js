@@ -33,7 +33,7 @@ function App() {
             alt="sddz"
           />
         </div>
-        {!login ? (
+        {login ? (
           <Login />
         ) : (
           <Home setLogin={setLogin} name={name} number={number} />
