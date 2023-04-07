@@ -11,7 +11,7 @@ function App() {
       // Retrieve the user's details after successful login
       const waName = otplessUser.waName;
       const waNumber = otplessUser.waNumber;
-
+      setLogin(true);
       // Handle the signup/signin process
       // ...
     };
