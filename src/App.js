@@ -33,7 +33,7 @@ function App() {
             alt="sddz"
           />
         </div>
-        {!login ? <Login /> : <Home name number />}
+        {!login ? <Login /> : <Home name={name} number={number} />}
       </div>
       {/* <Home />; */}
     </AnimatePresence>
