@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-const Login = () => {
+const Login = ({ setLogin }) => {
   return (
     <div className="login-content">
-      <form>
+      <form onSubmit={() => setLogin(true)}>
         <img
           src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/avatar.svg"
           alt="asd"
@@ -15,8 +15,7 @@ const Login = () => {
             <FaUser className="fas fa-user icon"></FaUser>
           </div>
           <div className="div">
-            <h5>Username</h5>
-            <input type="text" className="input" />
+            <input placeholder="Username" type="text" className="input" />
           </div>
         </div>
         <div className="input-div pass">
@@ -24,8 +23,7 @@ const Login = () => {
             <FaLock className="fas fa-lock icon"></FaLock>
           </div>
           <div className="div">
-            <h5>Password</h5>
-            <input type="password" className="input" />
+            <input placeholder="Password" type="password" className="input" />
           </div>
         </div>
         <a href="#">Forgot Password?</a>

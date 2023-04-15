@@ -6,19 +6,19 @@ function App() {
   const [login, setLogin] = useState(false);
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+
   useEffect(() => {
     // Define the 'otpless' function
     window.otpless = (otplessUser) => {
       // Retrieve the user's details after successful login
       const waName = otplessUser.waName;
       const waNumber = otplessUser.waNumber;
+      setLogin(true);
       setName(waName);
       setNumber(waNumber);
-      setLogin(true);
-      // Handle the signup/signin process
-      // ...
     };
   }, []);
+
   return (
     <AnimatePresence>
       <img
@@ -34,7 +34,7 @@ function App() {
           />
         </div>
         {!login ? (
-          <Login />
+          <Login setLogin={setLogin} />
         ) : (
           <Home setLogin={setLogin} name={name} number={number} />
         )}

@@ -3,14 +3,13 @@ import { motion as m } from "framer-motion";
 const Home = ({ name, number, setLogin }) => {
   const logout = () => {
     localStorage.clear();
-    console.log(window.otpless);
     setLogin(false);
   };
   return (
     <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, ease: "easeOut" }}
+      transition={{ duration: 2, ease: "easeOut" }}
     >
       <img
         className="wave"
